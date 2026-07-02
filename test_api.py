@@ -1,6 +1,6 @@
 import requests
 import pytest
-
+import time
 
 @pytest.fixture(scope="session")
 def base_url():
@@ -136,12 +136,13 @@ def test_login_invalid(base_url):
 
 def test_create_user(base_url):
     
+    current_time = time.time()
     info_about_user={
         
         'name':'max',
-        'email':'maxzatoovka@gmail.com',
+        'email':(f'maxxxxzatoovka{current_time}@gmail.com'),
         'password':'maksim',
-        'title ':'mr',
+        'title':'mr',
         'birth_date':'04',
         'birth_month':'06',
         'birth_year':'1996',
